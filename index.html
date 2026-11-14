@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rye Charles | IT Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="charles.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 </header>
 
 <section class="home" id="home">
-    <img src="charleshaha.jpeg" alt="Profile Picture" class="profile-pic">
+    <img src="picture.jpeg" alt="Profile Picture" class="profile-pic">
 
     <h1>Hello, I'm <span>Rye Charles</span></h1>
     <p>First Year BS Information Technology Student</p>
@@ -123,7 +123,7 @@ async function showJavaCode() {
     const codeBox = document.getElementById("javaCode");
 
     try {
-        const response = await fetch("TicTacToe.java");
+        const response = await fetch("tictactoe.java");
         if (!response.ok) throw new Error("File not found");
 
         const code = await response.text();
