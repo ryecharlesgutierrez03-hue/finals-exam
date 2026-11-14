@@ -136,7 +136,7 @@ async function showJavaCode() {
 
 async function copyJavaCode() {
     try {
-        const response = await fetch("TicTacToe.java");
+        const response = await fetch("tictactoe.java");
         if (!response.ok) throw new Error("File not found");
 
         const code = await response.text();
