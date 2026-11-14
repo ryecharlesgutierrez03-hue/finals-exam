@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rye Charles | IT Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h2>My Portfolio</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="home" id="home">
+    <img src="charleshaha.jpeg" alt="Profile Picture" class="profile-pic">
+
+    <h1>Hello, I'm <span>Rye Charles</span></h1>
+    <p>First Year BS Information Technology Student</p>
+    <a href="#about" class="btn">About Me</a>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+        <p>
+            Hello! My name is Gutierrez, Rye Charles. I am a first-year
+            Bachelor of Science in Information Technology student.
+            I am interested in computers, programming, and technology.
+            I want to improve my skills and learn more about creating
+            websites, applications, and computer programs.
+        </p>
+    </div>
+</section>
+
+<section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+        <h3>College</h3>
+        <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+        <p>Course: BS Information Technology</p>
+        <p>Year Level: First Year</p>
+    </div>
+
+    <div class="card">
+        <h3>Senior High School</h3>
+        <p>Nagpandayan National High School (NNHS)</p>
+        <p>Strand: HUMSS</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-container">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Java Basics</div>
+        <div class="skill">Microsoft Word</div>
+        <div class="skill">Microsoft Excel</div>
+        <div class="skill">PowerPoint</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Communication</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="card">
+        <h3>Java Tic-Tac-Toe Game</h3>
+
+        <p>
+            A simple two-player Tic-Tac-Toe game created using
+            Java programming. Players take turns choosing a
+            position on the board. The first player to get three
+            marks in a row, column, or diagonal wins.
+        </p>
+
+        <div class="project-buttons">
+            <button class="game-button" onclick="showJavaCode()">
+                VIEW JAVA CODE
+            </button>
+
+            <button class="game-button" onclick="copyJavaCode()">
+                COPY JAVA CODE
+            </button>
+        </div>
+
+        <pre id="javaCode"></pre>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="card contact-info">
+        <p><strong>Name:</strong> Gutierrez, Rye Charles</p>
+        <p><strong>Email:</strong> ryecharlesgutierrez03@gmail.com</p>
+        <p><strong>Course:</strong> BS Information Technology</p>
+    </div>
+</section>
+
+<footer>
+    <p>Gutierrez Rye Charles | IT Portfolio</p>
+</footer>
+
+<script>
+async function showJavaCode() {
+    const codeBox = document.getElementById("javaCode");
+
+    try {
+        const response = await fetch("TicTacToe.java");
+        if (!response.ok) throw new Error("File not found");
+
+        const code = await response.text();
+        codeBox.textContent = code;
+        codeBox.style.display = "block";
+    } catch (error) {
+        alert("Unable to load Java code. Please check TicTacToe.java.");
+    }
+}
+
+async function copyJavaCode() {
+    try {
+        const response = await fetch("TicTacToe.java");
+        if (!response.ok) throw new Error("File not found");
+
+        const code = await response.text();
+        await navigator.clipboard.writeText(code);
+
+        alert("Java code copied successfully!");
+    } catch (error) {
+        alert("Unable to copy Java code. Please open the Java file manually.");
+    }
+}
+</script>
+
+</body>
+</html>
+charles 
